@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="ogTitle" content="Messenger — New Job">
+  <meta property="og:description" id="ogDesc" content="แตะเพื่อเปิดดูรายละเอียดงาน">
+  <meta property="og:image" id="ogImage" content="">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <title id="pageTitle">Messenger — New Job</title>
+  <script>
+    var p = new URLSearchParams(window.location.search);
+    var title = p.get('title') || 'Messenger — New Job';
+    var desc  = p.get('desc')  || 'แตะเพื่อเปิดดูรายละเอียดงาน';
+    var image = p.get('img')   || '';
+    var dest  = p.get('to')    || '';
+    document.getElementById('ogTitle').setAttribute('content', title);
+    document.getElementById('ogDesc').setAttribute('content', desc);
+    document.getElementById('pageTitle').textContent = title;
+    if(image) document.getElementById('ogImage').setAttribute('content', image);
+    if(dest) window.location.replace(decodeURIComponent(dest));
+  </script>
+</head>
+<body style="background:#1A1A1A;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
+  <p>📋 กำลังเปิดรายละเอียดงาน...</p>
+</body>
+</html>
